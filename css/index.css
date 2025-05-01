@@ -1,0 +1,73 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: white;
+    color: black;
+    flex-wrap: wrap;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo img {
+    height: 65px;
+  }
+  
+  .categorias-btn {
+    background-color: #abff7d;
+    color: #1e1e1e;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .categorias-btn i {
+    margin-right: 10px;
+  }
+  
+  .buscador {
+    flex-grow: 1;
+    display: flex;
+    max-width: 600px;
+    margin: 0 15px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+  }
+  
+  .buscador input {
+    flex-grow: 1;
+    padding: 12px 8px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-family: 'Montserrat';
+  }
+  
+  .buscador button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #abff7d;
+    color: black;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .iconos a {
+    color: black;
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .iconos a i {
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  
