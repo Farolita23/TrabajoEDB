@@ -1,3 +1,5 @@
+/*JS PARA SECTION BANNER: */
+
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
@@ -22,5 +24,27 @@ dots.forEach((dot, i) => {
   dot.addEventListener("click", () => {
     currentSlide = i;
     showSlide(i);
+  });
+});
+
+/*JS PARA SECTION SUGERIDOS: */
+
+const scrollContainer = document.querySelector('.productos-scroll');
+const btnIzquierda = document.querySelector('.flecha.izquierda');
+const btnDerecha = document.querySelector('.flecha.derecha');
+
+
+btnIzquierda.addEventListener('click', () => {
+  scrollContainer.scrollBy({
+    left: -300,
+    behavior: 'smooth'
+  });
+});
+
+
+btnDerecha.addEventListener('click', () => {
+  scrollContainer.scrollBy({
+    left: 300,
+    behavior: 'smooth'
   });
 });
