@@ -1,1 +1,62 @@
-<!--En esta pagina apareceran todos los portatiles de la tienda
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moviles | TechNow</title>
+    <link rel="stylesheet" href="css/indexPortatiles.css"> <!--Este enlace es para el CSS de la página-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!--Este enlace es para tener iconos sin tener que descargarlos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap">  <!--Este enlace es para la tipografía-->
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+          <img src="resources/logo.png" alt="Logo"/>
+        </div>
+      
+        <button class="categorias-btn" id="menu-categorias">
+            <i class="fas fa-bars"></i> Todas las categorías
+          </button>
+      
+        <div class="buscador">
+          <input type="text" placeholder="Buscar productos" />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+      
+        <div class="iconos">
+          <a href="main/login.html" class="icono-cuenta">
+            <i class="fas fa-user"></i> <b>Mi cuenta</b>
+          </a>
+          <a href="#" class="icono-carrito">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </div>
+      </header>
+
+      <div class="contenedor-tabla">
+        <table>
+            <tr>
+                <td>
+                    <a href="indexMacbooks.html" class="celda-enlace">
+                        <img src="resources/imagenes_productos/Macbooks.avif" alt="Imagen 1" class="celda-imagen">
+                        <div class="celda-texto">Macbooks</div>
+                    </a>
+                </td>
+                <td>
+                    <a href="indexWindows.html" class="celda-enlace">
+                        <img src="resources/imagenes_productos/PortatilesWindowss.avif" alt="Imagen 2" class="celda-imagen">
+                        <div class="celda-texto">Portátiles Windows</div>
+                    </a>
+                </td>
+                <td>
+                    <a href="indexAccesorios.html" class="celda-enlace">
+                        <img src="resources/imagenes_productos/Accesorios_perifericos.avif" alt="Imagen 3" class="celda-imagen">
+                        <div class="celda-texto">Accesorios y periféricos</div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+      
+</body>
+</html>
