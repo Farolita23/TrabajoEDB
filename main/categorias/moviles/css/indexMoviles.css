@@ -137,3 +137,9 @@ h1 {
     color: #444;
     margin-bottom: 30px;
 }
+
+.precio {
+  color: #2ecc71;
+  font-weight: bold;
+  margin-top: 5px;
+}
