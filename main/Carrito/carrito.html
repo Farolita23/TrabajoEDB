@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compra | TechNow</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../../index.html">
+                <img src="../../resources/logo.png" alt="Logo"/>
+            </a>
+        </div>
+      
+        <button class="categorias-btn" id="menu-categorias">
+            <i class="fas fa-bars"></i> Todas las categorías
+        </button>
+      
+        <div class="buscador">
+            <input type="text" placeholder="Buscar productos" />
+            <button><i class="fas fa-search"></i></button>
+        </div>
+      
+        <div class="iconos">
+            <a href="../login/login.html" class="icono-cuenta">
+                <i class="fas fa-user"></i> <b>Mi cuenta</b>
+            </a>
+            <a href="carrito.html" class="icono-carrito active">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="carrito-container">
+        <h1>Mi Carrito</h1>
+        
+        <div class="carrito-wrapper">
+            <div class="carrito-productos">
+                <div class="carrito-header">
+                    <span class="header-producto">Producto</span>
+                    <span class="header-precio">Precio</span>
+                    <span class="header-cantidad">Cantidad</span>
+                    <span class="header-total">Total</span>
+                    <span class="header-accion"></span>
+                </div>
+                
+                <div id="productos-lista">
+                    <!-- Aquí se cargarán dinámicamente los productos mediante JavaScript -->
+                </div>
+                
+                <div class="carrito-vacio" id="carrito-vacio">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Tu carrito está vacío</p>
+                    <a href="../../index.html" class="btn-seguir-comprando">Comenzar a comprar</a>
+                </div>
+            </div>
+            
+            <div class="carrito-resumen" id="carrito-resumen">
+                <h2>Resumen del pedido</h2>
+                <div class="resumen-item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">0,00 €</span>
+                </div>
+                <div class="resumen-item">
+                    <span>Gastos de envío</span>
+                    <span id="envio">0,00 €</span>
+                </div>
+                <div class="resumen-item total">
+                    <span>Total</span>
+                    <span id="total">0,00 €</span>
+                </div>
+                
+                <div class="codigo-descuento">
+                    <input type="text" placeholder="Código de descuento" id="codigo-descuento">
+                    <button id="aplicar-descuento">Aplicar</button>
+                </div>
+                
+                <button class="btn-finalizar" id="btn-finalizar">Finalizar compra</button>
+                <a href="../../index.html" class="btn-seguir-comprando">Seguir comprando</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="faq">
+        <h2>Preguntas frecuentes sobre tu compra</h2>
+        <div class="faq-item">
+            <button class="faq-pregunta">
+                ¿Cuánto tiempo tardaré en recibir mi pedido?
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-respuesta">
+                <p>Los pedidos suelen entregarse en un plazo de 3 a 5 días hábiles. Para productos especiales o de importación, el plazo puede extenderse hasta 7-10 días hábiles.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-pregunta">
+                ¿Puedo modificar mi pedido una vez realizado?
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-respuesta">
+                <p>Puedes modificar tu pedido dentro de las primeras 2 horas tras realizarlo. Para ello, contacta con nuestro servicio de atención al cliente a través del chat en línea o llamando al número que aparece en la confirmación de tu pedido.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-pregunta">
+                ¿Qué formas de pago aceptáis?
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-respuesta">
+                <p>Aceptamos pagos con tarjeta de crédito/débito (Visa, MasterCard, American Express), PayPal, transferencia bancaria y pago contra reembolso (con un pequeño recargo adicional).</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="../../js/index.js"></script>
+    <script src="../../js/carrito.js"></script>
+</body>
+</html>
