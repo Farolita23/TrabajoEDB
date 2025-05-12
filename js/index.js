@@ -48,3 +48,15 @@ btnDerecha.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+/*JS PARA SECTION FAQ: */
+
+document.querySelectorAll('.faq-pregunta').forEach(item => {
+  item.addEventListener('click', () => {
+      const respuesta = item.nextElementSibling;
+      const icon = item.querySelector('.faq-icon');
+
+      respuesta.classList.toggle('active');
+      item.classList.toggle('active');
+  });
+});
