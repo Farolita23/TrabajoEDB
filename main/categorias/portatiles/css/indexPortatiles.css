@@ -83,13 +83,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contenedor-tabla {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
+    font-family: 'Montserrat';
 }
 
 table {
@@ -107,6 +108,7 @@ td {
   width: 25%; /* 4 columnas iguales */
   background-color: #f9f9f9;
   border-radius: 8px;
+  font-family: 'Montserrat';
 }
 
 .celda-enlace {
@@ -114,6 +116,7 @@ td {
     text-decoration: none;
     color: #333;
     transition: all 0.3s;
+    font-family: 'Montserrat';
 }
 
 .celda-enlace:hover {
@@ -130,12 +133,14 @@ td {
 .celda-texto {
     font-weight: bold;
     margin-top: 5px;
+    font-family: 'Montserrat';
 }
 
 h1 {
     text-align: center;
     color: #444;
     margin-bottom: 30px;
+    font-family: 'Montserrat';
 }
 
 .precio {
