@@ -335,3 +335,74 @@ body {
 .faq-respuesta.active {
   max-height: 200px;
 }
+
+/*CSS PARA SECTION RESEÑAS:*/
+
+.seccion-reseñas {
+      max-width: 1200px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    
+    .titulo-reseñas {
+      margin-bottom: 30px;
+      color: #333;
+    }
+    
+    .contenedor-reseñas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .reseña {
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      height: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .reseña:hover {
+      transform: translateY(-5px);
+    }
+    
+    .foto-cliente {
+      width: 30%;
+      height: 40%;
+      border-radius: 8%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    
+    .nombre-cliente {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    
+    .comentario-cliente {
+      margin-bottom: 15px;
+      font-style: italic;
+      color: #666;
+    }
+    
+    .estrellas {
+      color: #ff9800;
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+    
+    @media (max-width: 768px) {
+      .contenedor-reseñas {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
+    }
