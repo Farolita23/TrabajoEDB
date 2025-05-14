@@ -60,3 +60,23 @@ document.querySelectorAll('.faq-pregunta').forEach(item => {
       item.classList.toggle('active');
   });
 });
+
+/*JS PARA MENU DESPLEGABLE: */
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.getElementById('menu-categorias');
+  const menuContainer = document.getElementById('lista-categorias');
+  
+  // Mostrar/ocultar el menú al hacer clic en el botón
+  menuBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    menuContainer.classList.toggle('activo');
+  });
+  
+  // Cerrar el menú al hacer clic fuera de el
+  document.addEventListener('click', function(event) {
+    if (!menuBtn.contains(event.target) && !menuContainer.contains(event.target)) {
+      menuContainer.classList.remove('activo');
+    }
+  });
+});
