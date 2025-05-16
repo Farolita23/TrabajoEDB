@@ -109,6 +109,8 @@ td {
   background-color: #f9f9f9;
   border-radius: 8px;
   font-family: 'Montserrat';
+  position: relative; /* Importante para el posicionamiento del botón */
+
 }
 
 .celda-enlace {
@@ -117,6 +119,8 @@ td {
     color: #333;
     transition: all 0.3s;
     font-family: 'Montserrat';
+    position: relative; /* Importante para el posicionamiento relativo */
+
 }
 
 .celda-enlace:hover {
@@ -148,3 +152,37 @@ h1 {
   font-weight: bold;
   margin-top: 5px;
 }
+
+--------------------------------------------------
+-- PARTE DEL BOTON DE CARRITO HOVER --
+--------------------------------------------------
+ /* Estilos para el botón de carrito */
+        .hover-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0; /* Inicialmente invisible */
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s;
+            z-index: 10;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        td:hover .hover-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hover-button:hover {
+            background-color: #004b99;
+        }

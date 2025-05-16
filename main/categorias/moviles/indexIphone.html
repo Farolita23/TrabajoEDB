@@ -37,6 +37,7 @@
         <table>
             <tr>
                 <td>
+                    <button class="hover-button"><i class="fas fa-shopping-cart"></i></button>
                     <a href="pagina1.html" class="celda-enlace">
                         <img src="resources/imagenes_productos/iPhone/iPhone12.avif" alt="Imagen 1" class="celda-imagen">
                         <div class="celda-texto">iPhone 12</div>
@@ -99,4 +100,25 @@
     </div>
       
 </body>
+
+    <script>
+        // Añadir funcionalidad a los botones de carrito
+        document.querySelectorAll('.hover-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Aquí puedes añadir la lógica para añadir el producto al carrito
+                // Por ejemplo, obtener información del producto y guardarla
+                const productContainer = this.closest('td');
+                const productName = productContainer.querySelector('.celda-texto').textContent;
+                const productPrice = productContainer.querySelector('.precio').textContent;
+                
+                alert(`Producto añadido al carrito: ${productName} - ${productPrice}`);
+                
+                // Aquí podrías hacer una llamada AJAX para añadir el producto al carrito
+                // o implementar cualquier otra lógica que necesites
+            });
+        });
+    </script>
 </html>
