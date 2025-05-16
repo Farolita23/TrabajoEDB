@@ -77,6 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', function(event) {
     if (!menuBtn.contains(event.target) && !menuContainer.contains(event.target)) {
       menuContainer.classList.remove('activo');
-    }
+    } 
   });
 });
