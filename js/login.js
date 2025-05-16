@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     if (username === storedUsername && password === storedPassword) {
         alert('Inicio de sesión exitoso. ¡Bienvenido!');
         errorMessage.textContent = '';
-        window.location.href = 'index.html'; // Redirige a la página de inicio
+        window.location.href = '../../index.html'; // Redirige a la página de inicio
     } else {
         errorMessage.textContent = 'Usuario o contraseña incorrectos.';
     }
