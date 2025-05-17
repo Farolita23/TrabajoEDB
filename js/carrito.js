@@ -7,9 +7,9 @@ const COSTO_ENVIO = 4.99;
 
 // Códigos de descuento
 const codigosDescuento = {
-    'JohnTWater': 10, // 10% de descuento
-    'enriquecalvo33': 20, // 20% de descuento
-    'Mozambique': 15  // 15% de descuento
+    'JOHNTWATER': 25, // 10% de descuento
+    'ENRIQUECALVO33': 50, // 20% de descuento
+    'HANS_PESETERO': 35  // 15% de descuento
 };
 
 let descuentoAplicado = 0;
@@ -37,23 +37,6 @@ function cargarCarritoDesdeLocalStorage() {
     if (carritoGuardado) {
         carritoProductos = JSON.parse(carritoGuardado);
     } else {
-        // Si no hay carrito en localStorage, usar datos de ejemplo para demostrar
-        carritoProductos = [
-            {
-                id: 1,
-                nombre: 'iPhone 15 128GB - Color rosa - Libre',
-                precio: 829.99,
-                cantidad: 1,
-                imagen: '../main/categorias/moviles/resources/imagenes_productos/iPhone/iPhone15.avif'
-            },
-            {
-                id: 3,
-                nombre: 'Auriculares Apple 3a Generación',
-                precio: 119.99,
-                cantidad: 2,
-                imagen: '../main/categorias/moviles/resources/imagenes_productos/accesorios/AirPods3.avif'
-            }
-        ];
         guardarCarritoEnLocalStorage();
     }
 }
@@ -202,7 +185,7 @@ function aplicarCodigoDescuento() {
     const codigo = codigoInput.value.trim().toUpperCase();
     
     // Verificar si el código existe
-    if (codigosDescuento.hasOwnProperty(codigo)) {
+    if (Object.keys(codigosDescuento).map(c => c.toUpperCase()).includes(codigo)) {
         // Aplicar descuento
         descuentoAplicado = codigosDescuento[codigo];
         codigoAplicado = codigo;
