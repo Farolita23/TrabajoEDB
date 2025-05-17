@@ -17,8 +17,31 @@
         </div>
       
         <button class="categorias-btn" id="menu-categorias">
-            <i class="fas fa-bars"></i> Todas las categorías
-          </button>
+          <i class="fas fa-bars"></i> Todas las categorías
+        </button>
+
+        <div class="menu-categorias" id="lista-categorias">
+        <ul>
+          <li>
+            <a href="/TrabajoEDB/main/categorias/moviles/indexMoviles.html">
+              <img src="/TrabajoEDB/resources/fotosPortadaCategorias/fotoPortadaMoviles.png" alt="Móviles" class="categoria-img">
+              Móviles
+            </a>
+          </li>
+          <li>
+            <a href="/TrabajoEDB/main/categorias/portatiles/indexPortatiles.html">
+              <img src="/TrabajoEDB/resources/fotosPortadaCategorias/fotoPortadaPortatiles.png" alt="Portátiles" class="categoria-img">
+              Portátiles
+            </a>
+          </li>
+          <li>
+            <a href="/TrabajoEDB/main/categorias/tablets/indexTablets.html">
+              <img src="/TrabajoEDB/resources/fotosPortadaCategorias/fotoPortadaTablets.png" alt="Tablets" class="categoria-img">
+              Tablets
+            </a>
+          </li>
+        </ul>
+        </div>
       
         <div class="iconos">
           <a href="../../login/login.html" class="icono-cuenta">
@@ -94,6 +117,26 @@
     <p>&copy; 2025 TechNow. Todos los derechos reservados.</p>
   </div>
 </footer>
+
+<script>
+  const menuBtn = document.getElementById('menu-categorias');
+  const menuCategorias = document.getElementById('lista-categorias');
+  const contenedorProductos = document.querySelector('.contenedor-tabla');
+
+  menuBtn.addEventListener('click', () => {
+    menuCategorias.classList.toggle('activo');
+    contenedorProductos.classList.toggle('menu-activo');
+  });
+
+  //Para cerrar el menu cuando haces click fuera
+  document.addEventListener('click', (e) => {
+    if (!menuCategorias.contains(e.target) && !menuBtn.contains(e.target)) {
+      menuCategorias.classList.remove('activo');
+      contenedorProductos.classList.remove('menu-activo');
+    }
+  });
+</script>
+
 </body>
 
 </html>
