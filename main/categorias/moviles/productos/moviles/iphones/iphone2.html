@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 12 | TechNow</title>
+    <link rel="stylesheet" href="../../../../../../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+        }
+        
+        .producto-container {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .producto-imagen {
+            flex: 1 1 40%;
+            min-width: 300px;
+        }
+        
+        .producto-imagen img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 20px;
+            object-fit: contain;
+        }
+        
+        .producto-info {
+            flex: 1 1 55%;
+            min-width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        
+        .producto-nombre {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .producto-precio {
+            font-size: 26px;
+            font-weight: 600;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+        
+        .producto-descripcion {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .producto-caracteristicas {
+            margin-bottom: 30px;
+        }
+        
+        .producto-caracteristicas h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .caracteristicas-lista {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .caracteristicas-lista li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .caracteristicas-lista li:last-child {
+            border-bottom: none;
+        }
+        
+        .caracteristicas-lista li i {
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+        
+        .producto-acciones {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .cantidad-control {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cantidad-btn {
+            width: 32px;
+            height: 32px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+        
+        .cantidad-btn:hover {
+            background: #e0e0e0;
+        }
+        
+        .cantidad-input {
+            width: 50px;
+            height: 32px;
+            text-align: center;
+            margin: 0 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .btn-anadir-carrito {
+            padding: 12px 25px;
+            background: #abff7d;
+            color: #1e1e1e;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-anadir-carrito:hover {
+            background: #99e86f;
+        }
+        
+        .mensaje-exito {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            color: #388e3c;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .mensaje-exito.show {
+            display: block;
+        }
+        
+        .productos-relacionados {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .productos-relacionados h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        
+        .producto-relacionado {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .producto-relacionado:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .producto-relacionado img {
+            width: 100%;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 6px;
+            background-color: #fff;
+        }
+        
+        /* Estilos para opiniones */
+        .opiniones {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .opiniones h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .opinion {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .opinion-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .opinion-autor {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .opinion-fecha {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .opinion-estrellas {
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+        
+        .opinion-texto {
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .producto-container {
+                flex-direction: column;
+            }
+            
+            .productos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../../../../../../index.html">
+                <img src="../../../resources/logo.png" alt="Logo"/>
+            </a>
+        </div>
+        
+        <button class="categorias-btn" id="menu-categorias">
+            <i class="fas fa-bars"></i> Todas las categorías
+        </button>
+        
+        <div class="buscador">
+            <input type="text" placeholder="Buscar productos" />
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="iconos">
+            <a href="../../../../../login/login.html" class="icono-cuenta">
+                <i class="fas fa-user"></i> <b>Mi cuenta</b>
+            </a>
+            <a href="../../../../../Carrito/carrito.html" class="icono-carrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="menu-categorias" id="lista-categorias">
+        <ul>
+            <li>
+                <a href="../../../../moviles/indexMoviles.html">
+                    <img src="../../../../../../resources/fotosPortadaCategorias/fotoPortadaMoviles.png" alt="Móviles" class="categoria-img">
+                    Móviles
+                </a>
+            </li>
+            <li>
+                <a href="../../../../portatiles/indexPortatiles.html">
+                    <img src="../../../../../../resources/fotosPortadaCategorias/fotoPortadaPortatiles.png" alt="Ordenadores" class="categoria-img">
+                    Ordenadores
+                </a>
+            </li>
+            <li>
+                <a href="../../../../tablets/indexTablets.html">
+                    <img src="../../../../../../resources/fotosPortadaCategorias/fotoPortadaTablets.png" alt="Tablets" class="categoria-img">
+                    Tablets
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <main class="producto-container">
+        <div class="producto-imagen">
+            <img src="../../../resources/imagenes_productos/iPhone/iPhone13.avif" alt="iPhone 13" id="producto-img">
+        </div>
+        
+        <div class="producto-info">
+            <h1 class="producto-nombre" id="producto-nombre">iPhone 13 128GB - Color negro - Libre</h1>
+            <div class="producto-precio" id="producto-precio">829,00 €</div>
+            
+            <div class="producto-descripcion">
+               <p>El iPhone 13 eleva la experiencia móvil con mejoras significativas en todas las áreas importantes. Su brillante pantalla Super Retina XDR de 6.1 pulgadas ahora es un 28% más luminosa, perfecta para uso en exteriores. Impulsado por el revolucionario chip A15 Bionic, ofrece un rendimiento excepcional con mejor eficiencia energética y una batería que proporciona hasta 19 horas de reproducción de video.</p>
+            </div>
+            
+            <div class="producto-caracteristicas">
+                <h3>Características principales</h3>
+                <ul class="caracteristicas-lista">
+                    <li><i class="fas fa-check-circle"></i> Pantalla Super Retina XDR de 6.1 pulgadas con brillo mejorado</li>
+                    <li><i class="fas fa-check-circle"></i> Chip A15 Bionic con CPU de 6 núcleos y GPU de 4 núcleos</li>
+                    <li><i class="fas fa-check-circle"></i> Sistema de cámara dual mejorado que captura un 47% más de luz</li>
+                    <li><i class="fas fa-check-circle"></i> Modo Cinemático para videos con enfoque selectivo profesional</li>
+                    <li><i class="fas fa-check-circle"></i> Batería de larga duración (hasta 19 horas de reproducción de video)</li>
+                    <li><i class="fas fa-check-circle"></i> Protección Ceramic Shield y resistencia al agua IP68</li>
+                </ul>
+            </div>
+            
+            <div class="producto-acciones">
+                <div class="cantidad-control">
+                    <button class="cantidad-btn btn-menos">-</button>
+                    <input type="number" id="cantidad-input" class="cantidad-input" value="1" min="1" max="10">
+                    <button class="cantidad-btn btn-mas">+</button>
+                </div>
+                
+                <button class="btn-anadir-carrito" id="btn-anadir-carrito">
+                    <i class="fas fa-shopping-cart"></i> Añadir al carrito
+                </button>
+            </div>
+            
+            <div class="mensaje-exito" id="mensaje-exito">
+                ¡Producto añadido al carrito correctamente!
+            </div>
+        </div>
+    </main>
+    
+    <section class="productos-relacionados">
+        <h2>Productos relacionados</h2>
+        <div class="productos-grid">
+            <a href="#" class="producto-relacionado">
+                <img src="../../../resources/imagenes_productos/iPhone/iPhone14.avif" alt="iPhone 14">
+                <div class="producto-nombre">iPhone 14 128GB</div>
+                <div class="precio">963,99 €</div>
+            </a>
+            <a href="#" class="producto-relacionado">
+                <img src="../../../resources/imagenes_productos/iPhone/iPhone13.avif" alt="iPhone 13">
+                <div class="producto-nombre">iPhone 13 128GB</div>
+                <div class="precio">829,99 €</div>
+            </a>
+            <a href="#" class="producto-relacionado">
+                <img src="../../../resources/imagenes_productos/accesorios/AirPods3.avif" alt="AirPods 3">
+                <div class="producto-nombre">AirPods 3</div>
+                <div class="precio">119,99 €</div>
+            </a>
+            <a href="#" class="producto-relacionado">
+                <img src="../../../resources/imagenes_productos/accesorios/Funda_iPhone13_Transparente_12,99.avif" alt="Funda iPhone">
+                <div class="producto-nombre">Funda iPhone 12</div>
+                <div class="precio">12,99 €</div>
+            </a>
+        </div>
+    </section>
+    
+    <section class="opiniones">
+        <h2>Opiniones de clientes</h2>
+        
+        <div class="opinion">
+            <div class="opinion-header">
+                <span class="opinion-autor">María García</span>
+                <span class="opinion-fecha">15 mayo, 2025</span>
+            </div>
+            <div class="opinion-estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="opinion-texto">
+                Excelente teléfono. La calidad de la cámara es impresionante y la batería me dura todo el día incluso con uso intensivo. El color negro es muy elegante, justo como se ve en las fotos.
+            </div>
+        </div>
+        
+        <div class="opinion">
+            <div class="opinion-header">
+                <span class="opinion-autor">Carlos Martínez</span>
+                <span class="opinion-fecha">10 mayo, 2025</span>
+            </div>
+            <div class="opinion-estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="opinion-texto">
+                Muy buen rendimiento y las nuevas funciones de iOS son geniales. Le quito una estrella porque el precio sigue siendo alto, pero la calidad del producto lo justifica en gran parte.
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="../../../login/login.html">Iniciar Sesión</a></li>
+                    <li><a href="../../../Carrito/carrito.html">Tu carrito</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <a href="https://facebook.com/login" aria-label="Facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
+                <a href="https://instagram.com/login" aria-label="Instagram"><i class="fab fa-instagram"></i>Instagram</a>
+                <a href="https://tiktok.com/login" aria-label="Tiktok"><i class="fab fa-tiktok"></i>TikTok</a>
+            </div>
+
+            <div class="footer-payments">
+                <h4>Métodos de Pago</h4>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-amex"></i>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 TechNow. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../../../../../js/index.js"></script>
+    <script>
+        // Variables para el producto actual
+        const productoActual = {
+            id: 2, // ID único para este producto
+            nombre: "iPhone 13",
+            precio: 829.00,
+            imagen: "../../../resources/imagenes_productos/iPhone/iPhone13.avif"
+        };
+
+        // Actualizar el contador del carrito al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            actualizarContadorCarrito();
+            
+            // Configurar controladores de eventos
+            document.querySelector('.btn-menos').addEventListener('click', () => {
+                cambiarCantidad(-1);
+            });
+            
+            document.querySelector('.btn-mas').addEventListener('click', () => {
+                cambiarCantidad(1);
+            });
+            
+            document.getElementById('cantidad-input').addEventListener('change', validarCantidad);
+            
+            document.getElementById('btn-anadir-carrito').addEventListener('click', anadirAlCarrito);
+            
+            // Asegurar que el menú de categorías funcione correctamente
+            const menuBtn = document.getElementById('menu-categorias');
+            const menuContainer = document.getElementById('lista-categorias');
+            
+            // Mostrar/ocultar el menú al hacer clic en el botón
+            menuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                menuContainer.classList.toggle('activo');
+            });
+            
+            // Cerrar el menú al hacer clic fuera de él
+            document.addEventListener('click', function(event) {
+                if (!menuBtn.contains(event.target) && !menuContainer.contains(event.target)) {
+                    menuContainer.classList.remove('activo');
+                } 
+            });
+        });
+
+        // Función para cambiar la cantidad
+        function cambiarCantidad(cambio) {
+            const inputCantidad = document.getElementById('cantidad-input');
+            let cantidad = parseInt(inputCantidad.value);
+            
+            cantidad = Math.max(1, Math.min(10, cantidad + cambio));
+            inputCantidad.value = cantidad;
+        }
+
+        // Validar la cantidad ingresada manualmente
+        function validarCantidad() {
+            const inputCantidad = document.getElementById('cantidad-input');
+            let cantidad = parseInt(inputCantidad.value);
+            
+            if (isNaN(cantidad) || cantidad < 1) {
+                inputCantidad.value = 1;
+            } else if (cantidad > 10) {
+                inputCantidad.value = 10;
+            }
+        }
+
+        // Función para añadir el producto al carrito
+        function anadirAlCarrito() {
+            const cantidad = parseInt(document.getElementById('cantidad-input').value);
+            
+            // Obtener el carrito actual del localStorage o crear uno nuevo
+            let carritoProductos = JSON.parse(localStorage.getItem('carritoProductos')) || [];
+            
+            // Comprobar si el producto ya está en el carrito
+            const productoExistente = carritoProductos.find(item => item.id === productoActual.id);
+            
+            if (productoExistente) {
+                // Actualizar cantidad (hasta el máximo de 10)
+                productoExistente.cantidad = Math.min(10, productoExistente.cantidad + cantidad);
+            } else {
+                // Añadir nuevo producto al carrito
+                carritoProductos.push({
+                    id: productoActual.id,
+                    nombre: productoActual.nombre,
+                    precio: productoActual.precio,
+                    cantidad: cantidad,
+                    imagen: productoActual.imagen
+                });
+            }
+            
+            // Guardar carrito actualizado en localStorage
+            localStorage.setItem('carritoProductos', JSON.stringify(carritoProductos));
+            
+            // Actualizar contador y mostrar mensaje de éxito
+            actualizarContadorCarrito();
+            mostrarMensajeExito();
+        }
+
+        // Función para actualizar el contador del carrito
+        function actualizarContadorCarrito() {
+            const contador = document.querySelector('.cart-count');
+            const carritoProductos = JSON.parse(localStorage.getItem('carritoProductos')) || [];
+            
+            const totalItems = carritoProductos.reduce((total, item) => total + item.cantidad, 0);
+            contador.textContent = totalItems;
+        }
+
+        // Función para mostrar mensaje de éxito
+        function mostrarMensajeExito() {
+            const mensaje = document.getElementById('mensaje-exito');
+            mensaje.classList.add('show');
+            
+            // Ocultar el mensaje después de 3 segundos
+            setTimeout(() => {
+                mensaje.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
