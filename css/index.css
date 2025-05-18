@@ -525,3 +525,295 @@ body {
 .footer-social a:hover i {
   color: #fff;
 }
+@media (max-width: 992px) {
+  .producto-container {
+    padding: 0 15px;
+    margin: 20px auto;
+  }
+  
+  .producto-nombre {
+    font-size: 22px;
+  }
+  
+  .producto-precio {
+    font-size: 24px;
+  }
+  
+  .producto-caracteristicas h3 {
+    font-size: 17px;
+  }
+  
+  .productos-relacionados, .opiniones {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .producto-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .producto-imagen {
+    min-width: 100%;
+  }
+  
+  .producto-imagen img {
+    max-height: 300px;
+    object-fit: contain;
+  }
+  
+  .producto-info {
+    min-width: 100%;
+  }
+  
+  .producto-nombre {
+    font-size: 20px;
+  }
+  
+  .producto-precio {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .producto-descripcion {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  
+  .caracteristicas-lista li {
+    padding: 6px 0;
+    font-size: 14px;
+  }
+  
+  .producto-acciones {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .cantidad-control {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .btn-anadir-carrito {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Productos relacionados */
+  .productos-relacionados h2,
+  .opiniones h2 {
+    font-size: 20px;
+  }
+  
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Opiniones */
+  .opinion {
+    padding: 15px;
+  }
+  
+  .opinion-autor {
+    font-size: 15px;
+  }
+  
+  .opinion-fecha {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .producto-container {
+    margin: 15px auto;
+  }
+  
+  .producto-info {
+    padding: 15px;
+  }
+  
+  .producto-acciones {
+    margin-top: 20px;
+  }
+  
+  .productos-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .opinion-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .opinion-fecha {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 992px) {
+  .header {
+    padding: 10px 15px;
+    width: calc(100% - 30px);
+  }
+  
+  .categorias-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+  
+  .header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .categorias-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+    margin: 5px 0;
+    width: 100%;
+    order: 3;
+  }
+  
+  .logo {
+    order: 1;
+    width: 50%;
+  }
+  
+  .iconos {
+    order: 2;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .iconos a {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+  
+  .iconos a span {
+    display: none;
+  }
+  
+  .iconos a i {
+    font-size: 18px;
+  }
+  
+  /* Menú de categorías mobile */
+  .menu-categorias.activo {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .menu-categorias ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  
+  .menu-categorias li {
+    margin: 10px 0;
+  }
+  
+  .menu-categorias .categoria-img {
+    height: 80px;
+    width: 80px;
+  }
+  
+  .menu-categorias a {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Secciones de página */
+  .banner {
+    margin-top: 10px;
+  }
+  
+  .dots {
+    bottom: 5px;
+  }
+  
+  .dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 3px;
+  }
+  
+  .sugeridos h2,
+  .ultimo-tecnologia h2,
+  .faq h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .sugeridos {
+    padding: 30px 10px 40px;
+  }
+  
+  .producto {
+    min-width: 70%;
+  }
+  
+  .flecha {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .flecha.izquierda {
+    left: 5px;
+  }
+  
+  .flecha.derecha {
+    right: 5px;
+  }
+  
+  .faq-pregunta {
+    font-size: 16px;
+    padding: 12px 10px;
+  }
+  
+  .faq-respuesta p {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .producto {
+    min-width: 80%;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-links, .footer-social, .footer-payments {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-social a, .footer-links a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+

@@ -543,3 +543,208 @@
     width: 100%;
   }
 }
+@media (max-width: 992px) {
+  .carrito-container {
+    padding: 0 15px;
+  }
+  
+  .carrito-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .carrito-productos, .carrito-resumen {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carrito-container {
+    margin: 20px auto;
+  }
+  
+  .carrito-wrapper {
+    gap: 20px;
+  }
+  
+  /* Refinamiento del grid para productos en móvil */
+  .producto-item {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 15px 0;
+    gap: 8px;
+  }
+  
+  .producto-info {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .producto-precio, .producto-total {
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .producto-precio:before {
+    content: "Precio: ";
+    font-weight: 500;
+    margin-right: 5px;
+  }
+  
+  .producto-total:before {
+    content: "Total: ";
+    font-weight: 500;
+    margin-right: 5px;
+  }
+  
+  .cantidad-control {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 10px 0;
+  }
+  
+  .cantidad-control:before {
+    content: "Cantidad: ";
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  
+  /* Eliminar los pseudo-elementos ::before y ::after duplicados */
+  .producto-item::before,
+  .producto-item::after {
+    content: none;
+  }
+  
+  /* Mejora del botón eliminar */
+  .btn-eliminar {
+    position: absolute;
+    top: 15px;
+    right: 0;
+  }
+  
+  /* Mejoras para el resumen del carrito */
+  .carrito-resumen h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+  
+  .resumen-item {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .resumen-item.total {
+    font-size: 17px;
+  }
+  
+  .codigo-descuento {
+    margin: 15px 0;
+  }
+  
+  .codigo-descuento input,
+  .codigo-descuento button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  
+  .btn-finalizar {
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  /* Ajustes para carrito vacío */
+  .carrito-vacio i {
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+  
+  .carrito-vacio p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Mejoras para el modal de pago en dispositivos móviles */
+@media (max-width: 768px) {
+  .modal-contenido {
+    margin: 15px auto;
+    padding: 20px 15px;
+    max-width: 90%;
+  }
+  
+  .modal-pago h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .metodo-pago-item {
+    padding: 12px;
+  }
+  
+  .metodo-pago-item label {
+    font-size: 14px;
+  }
+  
+  .form-grupo input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .form-grupo label {
+    font-size: 14px;
+  }
+  
+  .datos-bancarios {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .resumen-pedido h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .resumen-pedido-item {
+    font-size: 14px;
+  }
+  
+  .resumen-pedido-item.total {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-contenido {
+    margin: 10px auto;
+    padding: 15px 12px;
+  }
+  
+  .cerrar-modal {
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+  }
+  
+  .btn-primario, .btn-secundario {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .codigo-descuento {
+    flex-direction: column;
+  }
+  
+  .codigo-descuento input {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .codigo-descuento button {
+    width: 100%;
+    border-radius: 5px;
+  }
+}

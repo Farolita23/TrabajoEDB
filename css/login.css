@@ -64,3 +64,62 @@ h1 {
     font-size: 0.9em;
     margin-top: 10px;
 }
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    max-width: 350px;
+    padding: 25px 15px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .login-form input {
+    padding: 12px 10px;
+    font-size: 16px;
+  }
+  
+  .login-form button {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 20px 12px;
+  }
+  
+  h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .login-form label {
+    font-size: 14px;
+  }
+  
+  .login-form input {
+    margin-bottom: 12px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  .error-message {
+    font-size: 0.85em;
+  }
+  
+  /* Mejoras para pantallas muy pequeñas */
+  @media (max-height: 500px) {
+    body {
+      align-items: flex-start;
+      padding-top: 20px;
+    }
+    
+    .container {
+      margin-top: 10px;
+    }
+  }
+}
