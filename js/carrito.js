@@ -250,3 +250,13 @@ function inicializarFAQ() {
 function formatearPrecio(precio) {
     return precio.toFixed(2).replace('.', ',');
 }
+
+document.querySelectorAll('.faq-pregunta').forEach(item => {
+  item.addEventListener('click', () => {
+      const respuesta = item.nextElementSibling;
+      const icon = item.querySelector('.faq-icon');
+
+      respuesta.classList.toggle('active');
+      item.classList.toggle('active');
+  });
+});
