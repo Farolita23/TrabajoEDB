@@ -72,7 +72,6 @@ function actualizarCarritoUI() {
             
             productoElement.innerHTML = `
                 <div class="producto-info">
-                    <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-imagen">
                     <span class="producto-nombre">${producto.nombre}</span>
                 </div>
                 <span class="producto-precio">${formatearPrecio(producto.precio)} €</span>
