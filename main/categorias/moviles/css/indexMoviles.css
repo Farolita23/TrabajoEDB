@@ -158,7 +158,7 @@ td {
     color: #333;
     transition: all 0.3s;
     font-family: 'Montserrat';
-    position: relative; /* Importante para el posicionamiento relativo */
+    position: relative; 
 
 }
 

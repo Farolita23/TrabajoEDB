@@ -611,7 +611,7 @@
     margin-right: 10px;
   }
   
-  /* Eliminar los pseudo-elementos ::before y ::after duplicados */
+  
   .producto-item::before,
   .producto-item::after {
     content: none;

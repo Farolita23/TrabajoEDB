@@ -9,7 +9,7 @@ const formulariosPago = document.querySelectorAll('.formulario-pago');
 // Generar número de pedido aleatorio
 document.getElementById('numero-pedido').textContent = Math.floor(100000 + Math.random() * 900000);
 
-// Modificar la función finalizarCompra para mostrar el modal
+
 function finalizarCompra() {
     if (carritoProductos.length === 0) {
         alert('Tu carrito está vacío. Añade productos antes de finalizar la compra.');
@@ -19,7 +19,7 @@ function finalizarCompra() {
     // Actualizar el resumen en el modal
     actualizarResumenModal();
     
-    // Mostrar el formulario del primer método de pago (tarjeta) por defecto
+    // Mostrar el formulario del primer método de pago 
     mostrarFormularioPago('tarjeta');
     
     // Mostrar el modal
@@ -131,7 +131,6 @@ btnConfirmar.addEventListener('click', () => {
     
     // Si es válido, procesar el pedido
     if (valido) {
-        // Aquí iría la lógica para procesar el pago según el método seleccionado
         
         // Mensaje de éxito según el método de pago
         if (metodoPago === 'tarjeta') {

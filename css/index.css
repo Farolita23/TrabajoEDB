@@ -238,7 +238,7 @@ body {
   color: #333;
 }
 
-/*Media Query para pantallas pequeñas (ajuste responsivo) */
+/*Media Query para pantallas pequeñas */
 @media (max-width: 768px) {
   .items {
       flex-direction: column;
@@ -400,7 +400,7 @@ body {
   z-index: 5;
   position: absolute;
   left: 0;
-  top: 100%; /* Posicionar justo debajo del header */
+  top: 100%; 
 }
 
 .menu-categorias.activo {

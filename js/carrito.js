@@ -1,4 +1,4 @@
-// Productos de ejemplo en el carrito (podría cargarse desde el localStorage)
+
 let carritoProductos = [];
 
 // Costos de envío (gratis para pedidos de más de 50€)
@@ -219,7 +219,7 @@ function finalizarCompra() {
         return;
     }
     
-    // Aquí iría la lógica para procesar el pago, pero por ahora solo mostraremos un mensaje
+    
     alert('¡Compra finalizada con éxito! Tu pedido se ha procesado correctamente.');
     
     // Vaciar carrito
